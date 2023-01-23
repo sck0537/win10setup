@@ -1,13 +1,24 @@
+# setting Scope
 Set-ExecutionPolicy -Scope CurrentUser Bypass
 
 Set-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Search -Name SearchBoxTaskbarMode -Value 0 -Type DWord -Force;
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowTaskViewButton -Value 0 -Type DWord -Force;
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarDa -Value 0 -Type DWord -Force;
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name TaskbarMn -Value 0 -Type DWord -Force;
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name ShowCortanaButton -Value 0 -Type DWord -Force;
 
 
-Set-ItemProperty -Path HKCU:\Software\Microsoft\InputMethod\Settings\CHS -Name UserDefinedDoublePinyinScheme0 -Value "xiaohe*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt";
+Set-ItemProperty -Path HKCU:\Software\Microsoft\InputMethod\Settings\CHS -Name EnableExtraDomainType -Value 1 -Type DWord -Force;
+Set-ItemProperty -Path HKCU:\Software\Microsoft\InputMethod\Settings\CHS -Name "Enable Double Pinyin" -Value 1 -Type DWord -Force;
+Set-ItemProperty -Path HKCU:\Software\Microsoft\InputMethod\Settings\CHS -Name DoublePinyinScheme -Value 10 -Type DWord -Force;
 
+
+Set-ItemProperty -Path HKCU:\Software\Microsoft\InputMethod\Settings\CHS -Name UserDefinedDoublePinyinScheme0 -Value "xiaohe*2*^*iuvdjhcwfg^xmlnpbksqszxkrltvyovt" -Force;
+
+
+Set-ItemProperty -Path HKCU:\Software\Microsoft\InputMethod\Settings\CHS -Name TaskbarMn -Value 0 -Type DWord -Force;
+
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Multimedia\Audio -Name AccessibilityMonoMixState -Value 1 -Type DWord -Force;
 
 # Disable show frequent/recent files/folders in Quick Access
 Write-Host "Disabling show recent files/folders in Quick Access..." -ForegroundColor Green
@@ -43,7 +54,7 @@ winget uninstall Microsoft.Teams
 
 
 winget install GyDi.ClashVerge
-winget install qBittorrent.qBittorrent 
+winget install qBittorrent.qBittorrent
 # winget install Microsoft.PowerShell
 winget install Valve.Steam
 winget install Tencent.WeChat
@@ -59,7 +70,7 @@ winget install sumatrapdf
 winget install calibre
 winget install Python.Python.3.10
 winget install Spotify.Spotify
-winget install Git.Git  
-winget install Microsoft.PowerToys  
+winget install Git.Git
+winget install Microsoft.PowerToys
 
-# winget install Tencent.TIM  
+# winget install Tencent.TIM
